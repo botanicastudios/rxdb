@@ -1,5 +1,5 @@
 {
-  "name": "rxdb",
+  "name": "@botanicastudios/rxdb",
   "description": "A local-first realtime NoSQL Database for JavaScript applications - https://rxdb.info/",
   "version": "16.15.0",
   "author": "pubkey",
@@ -140,6 +140,12 @@
       "require": "./dist/cjs/plugins/storage-sqlite/index.js",
       "import": "./dist/esm/plugins/storage-sqlite/index.js",
       "default": "./dist/esm/plugins/storage-sqlite/index.js"
+    },
+    "./plugins/storage-sqlite-prod": {
+      "types": "./dist/types/plugins/storage-sqlite-prod/index.d.ts",
+      "require": "./dist/cjs/plugins/storage-sqlite-prod/index.js",
+      "import": "./dist/esm/plugins/storage-sqlite-prod/index.js",
+      "default": "./dist/esm/plugins/storage-sqlite-prod/index.js"
     },
     "./plugins/electron": {
       "types": "./dist/types/plugins/electron/index.d.ts",
@@ -373,6 +379,7 @@
     "test:node:memory": "npm run transpile && cross-env DEFAULT_STORAGE=memory mocha --expose-gc --config ./config/.mocharc.cjs ./test_tmp/unit.test.js",
     "test:node:memory-random-delay": "npm run transpile && cross-env DEFAULT_STORAGE=memory-random-delay mocha --expose-gc --config ./config/.mocharc.cjs ./test_tmp/unit.test.js",
     "test:node:sqlite-trial": "npm run transpile && cross-env DEFAULT_STORAGE=sqlite-trial mocha --expose-gc --config ./config/.mocharc.cjs ./test_tmp/unit.test.js",
+    "test:node:sqlite-prod": "npm run transpile && cross-env DEFAULT_STORAGE=sqlite-prod mocha --expose-gc --config ./config/.mocharc.cjs ./test_tmp/unit.test.js",
     "test:node:localstorage": "npm run transpile && cross-env DEFAULT_STORAGE=localstorage mocha --expose-gc --config ./config/.mocharc.cjs ./test_tmp/unit.test.js",
     "test:node:dexie": "npm run transpile && cross-env DEFAULT_STORAGE=dexie mocha --expose-gc --config ./config/.mocharc.cjs ./test_tmp/unit.test.js",
     "test:bun:dexie": "npm run transpile && cross-env DEFAULT_STORAGE=dexie NODE_ENV=fast bun run ./node_modules/mocha/bin/mocha test_tmp/unit.test.js --bail --timeout 60000",

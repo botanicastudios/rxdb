@@ -1,0 +1,24 @@
+{
+  "name": "rxdb-storage-sqlite-new",
+  "description": "RxDB Storage SQLite NEW Plugin",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js"
+    }
+  },
+  "sideEffects": false,
+  "keywords": [
+    "rxdb",
+    "storage",
+    "sqlite",
+    "database",
+    "nosql"
+  ],
+  "author": "RxDB",
+  "license": "Apache-2.0"
+}
