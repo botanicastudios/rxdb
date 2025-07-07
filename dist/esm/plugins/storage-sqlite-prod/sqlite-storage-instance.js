@@ -736,7 +736,7 @@ export async function createSQLiteTrialStorageInstance(storage, params, settings
     throw newRxError('SQL1');
   }
   var internals = {};
-  var useDatabaseName = (settings.databaseNamePrefix ? settings.databaseNamePrefix : '') + '_prod_' + params.databaseName;
+  var useDatabaseName = (settings.databaseNamePrefix ? settings.databaseNamePrefix : '') + params.databaseName;
   internals.databasePromise = getDatabaseConnection(storage.settings.sqliteBasics, useDatabaseName).then(async database => {
     await sqliteTransaction(database, sqliteBasics, async () => {
       // Create the main table
