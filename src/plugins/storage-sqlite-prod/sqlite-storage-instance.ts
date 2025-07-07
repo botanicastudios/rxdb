@@ -994,7 +994,6 @@ export async function createSQLiteTrialStorageInstance<RxDocType>(
     const internals: Partial<SQLiteInternals> = {};
     const useDatabaseName =
         (settings.databaseNamePrefix ? settings.databaseNamePrefix : '') +
-        '_prod_' +
         params.databaseName;
     internals.databasePromise = getDatabaseConnection(
         storage.settings.sqliteBasics,
