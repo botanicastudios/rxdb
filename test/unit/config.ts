@@ -354,7 +354,8 @@ export function getStorage(storageKey: string): RxTestStorage {
                     // Import from the prod plugin
                     const {
                         getRxStorageSQLiteProd,
-                        getSQLiteBasicsNodeNative,
+                        getSQLiteBasicsNodeNative:
+                            getSQLiteBasicsNodeNativeProd,
                     } = await import(
                         '../../plugins/storage-sqlite-prod/index.mjs'
                     );
@@ -362,7 +363,7 @@ export function getStorage(storageKey: string): RxTestStorage {
                         'node:sqlite'
                     ).then((module) => module.DatabaseSync);
                     sqliteBasicsNew =
-                        getSQLiteBasicsNodeNative(nativeSqlitePromise);
+                        getSQLiteBasicsNodeNativeProd(nativeSqlitePromise);
                     sqliteStorageNew = getRxStorageSQLiteProd({
                         sqliteBasics: ensureNotFalsy(sqliteBasicsNew),
                         databaseNamePrefix: './test_tmp/',
